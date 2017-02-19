@@ -1,0 +1,4 @@
+/*
+思路： 主要原理和中序Morris遍历一样。
+      因为只有两个节点被交换，故在中序Morris遍历的基础上：将打印节点的操作改为记录这两个节点，是用pair<TreeNode*,TreeNode*>broken来记录。
+*/
