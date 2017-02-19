@@ -1,0 +1,3 @@
+/*
+原理：思路和levelOrder一样，只是在最终返回结果之前，reverse(result.begin(),result.end())即可。
+*/
