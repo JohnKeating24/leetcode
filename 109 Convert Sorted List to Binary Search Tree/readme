@@ -1,0 +1,4 @@
+/*
+利用fast、slow(fast=fast->next->next,slow=slow->next)来找到list的中点的前一点(一定要注意是中点的前一点)，然后将中点设为root；
+再递归求其左右子树即可
+*/
