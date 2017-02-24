@@ -1,3 +1,6 @@
 /*
-略
+if(root->left==NULL && root->right==NULL)
+    return sum==root->val;
+//是在叶节点处返回true/false
+//若把sum==root->val写入判断条件，则只会在满足条件的叶节点处返回，且只会返回true。
 */
