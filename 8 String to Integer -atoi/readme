@@ -1,0 +1,10 @@
+//将字符串转化为整数
+
+//only need to handle four cases:
+//1 discards all leading whitespaces
+//2 sign of the number
+//3 overflow
+//4 invalid input
+
+//why is it always going to be 7?
+//Because INT_MAX has been divided by 10, so the tail vanishes. if the tail is 8 or 9, it will overflow.
