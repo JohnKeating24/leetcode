@@ -1,0 +1,14 @@
+//    int map(char c){
+    switch(c){
+        case 'I': return 1;
+        case 'V': return 5;
+        case 'X': return 10;
+        case 'L': return 50;
+        case 'C': return 100;
+        case 'D': return 500;
+        case 'M': return 1000;
+        default : return 0;
+    }
+}
+//1 上述 switch到多个case语句 的映射；很好地将字符和数值对应起来了。
+//2 if(i>0 && map(s[i-1])<map(s[i]))  使用i、i-1就很好地避免了使用i、i+1最终会越界的情况。
