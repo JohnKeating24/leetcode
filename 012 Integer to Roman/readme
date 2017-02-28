@@ -1,0 +1,7 @@
+// 1 是通过建立两个一一对应的数组 nums和strs，将数值和字符对应起来。
+// 2 for循环写得很好；判断条件是：num>0
+for(int i=0;num>0;i++){
+      int count=num/nums[i];
+      num=num%nums[i];
+      while(count--) result+=strs[i];
+  }
