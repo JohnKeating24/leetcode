@@ -1,0 +1,4 @@
+The idea is to use an unordered_map to store those strings that are anagrams. 
+We use the sorted string as the key and the string itself as the value. 
+The strings are stored in a multiset since there may be duplicates. 
+Moreover, multiset will sort them by default as we desire.
