@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isNumber(string s) {
+    int i = 0;
+    for(; s[i] == ' '; i++) {} // skip the whilespaces
+    // check the significand // skip the sign if exist
+    if(s[i] == '+' || s[i] == '-') i++; 
+    int n_nm, n_pt;
+    for(n_nm=0, n_pt=0; (s[i]<='9' && s[i]>='0') || s[i]=='.'; i++)
+        s[i] == '.' ? n_pt++:n_nm++;      
+    // no more than one point, at least one digit     
+    if(n_pt>1 || n_nm<1) return false;             
+    if(s[i] == 'e') {// check the exponent if exist
+        i++;
+        if(s[i] == '+' || s[i] == '-') i++; // skip the sign
+        int n_nm = 0;
+        for(; s[i]>='0' && s[i]<='9'; i++, n_nm++) {}
+        if(n_nm<1) return false;
+    }    
+    for(; s[i] == ' '; i++) {} // skip the trailing whitespaces
+    return s[i]==0;  // must reach the ending 0 of the string
+    }
+};
