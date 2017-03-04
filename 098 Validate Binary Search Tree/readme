@@ -1,0 +1,5 @@
+//if(root->val <= min || root->val >= max)  return false;   //意思就是：min<root->val && root->val<max 时继续
+//return help(root->left, min, root->val) && help(root->right, root->val, max);
+
+//可以直接改为：
+// return min<root->val && root->val<max && help(root->left, min, root->val) && help(root->right, root->val, max);
