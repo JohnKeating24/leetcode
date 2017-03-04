@@ -1,0 +1,7 @@
+If we use in-order traversal to serialize a binary search tree, we can
+get a list of values in ascending order. It can be proved with the
+definition of BST. And here I use the reference of TreeNode
+pointer prev as a global variable to mark the address of previous node in the
+list.
+
+If you know what INT_MAX or INT_MIN is, then it is no excuse for your carelessness.
