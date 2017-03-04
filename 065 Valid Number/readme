@@ -1,0 +1,9 @@
+The idea is pretty straightforward. A valid number is composed of the significand and the exponent (which is optional). 
+As we go through the string, do the following things one by one:
+
+1 skip the leading whitespaces;
+2 check if the significand is valid. To do so, simply skip the leading sign and count the number of digits and the number of points.
+  A valid significand has no more than one point and at least one digit.
+3 check if the exponent part is valid. We do this if the significand is followed by 'e'. 
+  Simply skip the leading sign and count the number of digits. A valid exponent contain at least one digit.
+4 skip the trailing whitespaces. We must reach the ending 0 if the string is a valid number.
