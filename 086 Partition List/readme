@@ -1,0 +1,2 @@
+//注意：ListNode 和 ListNode* 的含义不一样：分别为 节点 和 节点指针。
+//其使用分别为： .next   和  ->next 。 
