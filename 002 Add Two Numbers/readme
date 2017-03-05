@@ -1,0 +1,5 @@
+//ListNode dummy(-1);
+//ListNode* pre=&dummy;
+//ListNode *pa=l1,*pb=l2;
+//注意：指针的值是地址；上式中&dummy,l1/l2(头节点表示起始地址):均表示地址。
+//最后 return dummy.next;
