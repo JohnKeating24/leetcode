@@ -1,0 +1,8 @@
+ /**
+ use faster and lower runner solution. (2 pointers)
+ the faster one move 2 steps, and slower one move only one step.
+ if there's a circle, the faster one will finally "catch" the slower one. 
+ (the distance between these 2 pointers will decrease one every time.)
+ 
+ if there's no circle, the faster runner will reach the end of linked list. (NULL)
+ */
