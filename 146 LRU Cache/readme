@@ -1,0 +1,6 @@
+//双向链表保存节点，哈希表保存节点地址（查找o(1)时间）
+list<CacheNode> cacheList;
+unordered_map<int,list<CacheNode>::iterator> cacheMap;
+//每次使用get/put操作时，要更新cacheList和cacheMap。//put操作时要先判断是否已满，若满，则删除cacheList最后一个元素/cacheMap对应元素
+//spice(position,x,iterator i)
+position:要插入的目的list的位置，x:源list,iterator i:源list中的迭代器。
