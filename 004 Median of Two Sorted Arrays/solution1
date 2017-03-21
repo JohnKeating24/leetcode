@@ -1,0 +1,27 @@
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int n1=nums1.size(),n2=nums2.size();
+        int total=n1+n2;
+        if(total & 0x01)
+            return findKth(nums1,0,n1,nums2,0,n2,total/2+1);
+        else
+            return (findKth(nums1,0,n1,nums2,0,n2,total/2)+findKth(nums1,0,n1,nums2,0,n2,total/2+1))/2.0;
+    }
+    int findKth(vector<int>& nums1, int s1, int e1, vector<int>& nums2, int s2, int e2, int k){
+        // s1:start1 e1:end1
+        int m=e1-s1, n=e2-s2;
+        if(m>n)  return findKth(nums2, s2, e2, nums1, s1, e1, k);
+        if(m==0)  return nums2[s2+k-1];
+        if(k==1)  return min(nums1[s1], nums2[s2]);
+        
+        int t1=min(k/2, m), t2=k-t1;
+        if(nums1[s1+t1-1] < nums2[s2+t2-1])
+            return findKth(nums1, s1+t1, e1, nums2, s2, e2, k-t1);  
+            //为何是s2+t2?  将终止点e2提前
+        else if(nums1[s1+t1-1] > nums2[s2+t2-1])
+            return findKth(nums1, s1, s1+t1, nums2, s2+t2, e2, k-t2);  //为何是s1+t1？将终止点e1提前
+        else
+            return nums1[s1+t1-1];
+    }
+};
