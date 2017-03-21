@@ -1,0 +1,3 @@
+// 二分算法 ： [first,mid) mid [mid+1,last)
+//当target在左边时：A[first]<=target&&target<A[mid]
+//当target在右边时：A[mid]<target&&target<=A[last-1]
