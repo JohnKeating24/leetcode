@@ -7,9 +7,9 @@ public:
             if(cur->next && cur->val==cur->next->val){
                 while(cur->next && cur->val==cur->next->val)
                     cur->next=cur->next->next;
-                cur=pre->next=cur->next;
+                cur=pre->next=cur->next;   //建立pre->cur的连接，不更新pre
             }else{
-                pre=pre->next=cur;
+                pre=pre->next=cur;         //(有可能重复)建立pre->cur的连接，更新pre
                 cur=cur->next;
             }
         }
