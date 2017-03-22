@@ -1,0 +1,4 @@
+//hash[nums[i]] = i; 非常重要/巧妙：先查找gap再在hash插入nums[i]，可以避免target的一半的数存在二vector中的情况。  
+//如[3 ,2 ,4] target=6     
+
+//unordered_map 可命名为hash/mp。
