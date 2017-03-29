@@ -1,0 +1,5 @@
+// 若使用如下方法来去重，则时间超过限制。如元素全为0，且有100个元素的情况。。。
+std::sort(res.begin(), res.end());
+res.erase(unique(res.begin(), res.end()), res.end());
+
+//程序中的去重方法为：对i/front/back：若下一个元素和当前元素重复，则跳过，进行下一次的比较。
