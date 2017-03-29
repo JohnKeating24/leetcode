@@ -3,3 +3,6 @@ std::sort(res.begin(), res.end());
 res.erase(unique(res.begin(), res.end()), res.end());
 
 //程序中的去重方法为：对i/front/back：若下一个元素和当前元素重复，则跳过，进行下一次的比较。
+//此时最多有连续三个重复，即：nums[i]/nums[front]/nums[back]
+
+//注意：front/back是表示索引值，取得很巧妙。
