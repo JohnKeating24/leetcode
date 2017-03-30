@@ -1,0 +1,30 @@
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> result;
+        sort(nums.begin(),nums.end());
+        for(int a=0;a<nums.size();a++){
+            for(int b=a+1;b<nums.size();b++){
+                int c=b+1,d=nums.size()-1;
+                while(c<d){
+                    int sum=nums[a]+nums[b]+nums[c]+nums[d];
+                    if(sum<target) c++;
+                    else if(sum>target) d--;
+                    else{
+                        vector<int> four(4,0);
+                        four[0]=nums[a];
+                        four[1]=nums[b];
+                        four[2]=nums[c];
+                        four[3]=nums[d];
+                        result.push_back(four);
+                        while(c<d && nums[c]==four[2]) c++;
+                        while(c<d && nums[d]==four[3]) d--;
+                    }
+                }
+                while(b+1<nums.size()-2 && nums[b+1]==nums[b]) b++;
+            }
+            while(a+1<nums.size()-3 && nums[a+1]==nums[a]) a++;
+        }
+        return result;
+    }
+};
