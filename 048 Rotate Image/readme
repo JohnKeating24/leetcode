@@ -3,7 +3,8 @@ here give a common method to solve the image rotation problems.
 
 /*
  * clockwise rotate
- * first reverse up to down, then swap the symmetry//先水平中线，再主对角线 
+ * first reverse up to down, then swap the symmetry//先从下到下翻转，再主对角线翻转
+ //也可以理解为先水平中线，再主对角线 
  * 1 2 3     7 8 9     7 4 1
  * 4-5-6  => 4 5 6  => 8 5 2
  * 7 8 9     1 2 3     9 6 3
@@ -22,13 +23,13 @@ void rotate(vector<vector<int> > &matrix) {
 
 /*
  * anticlockwise rotate
- * first reverse left to right, then swap the symmetry
+ * first reverse left to right, then swap the symmetry//先从左到右翻转，再主对角线翻转
  * 1 2 3     3 2 1     3 6 9
  * 4 5 6  => 6 5 4  => 2 5 8
  * 7 8 9     9 8 7     1 4 7
 */
 void anti_rotate(vector<vector<int> > &matrix) {
-    for (auto vi : matrix) reverse(vi.begin(), vi.end());
+    for (auto vi : matrix) reverse(vi.begin(), vi.end());    
     for (int i = 0; i < matrix.size(); ++i) {
         for (int j = i + 1; j < matrix[i].size(); ++j)
             swap(matrix[i][j], matrix[j][i]);
