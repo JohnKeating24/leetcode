@@ -1,0 +1,4 @@
+//height[max]为全局最高点，它将数组分为左右两边
+//top_left为左边最高点，若当前值height[i]>top_left,就更新top_left=height[i]，否则就加上面积：top_left-height[i]
+//右边同理
+//height[0]/height[max]/height[size-1]不本身是不贡献面积的。
