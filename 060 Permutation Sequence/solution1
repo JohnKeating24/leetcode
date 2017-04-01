@@ -1,0 +1,20 @@
+class Solution {
+public:
+    string getPermutation(int n, int k) {
+        string s(n,'0'),result("");
+        int base=1;
+        for(int i=1;i<=n;i++){
+            s[i-1]+=i; //because s[i-1] is char,s="123...n"  
+            base*=i;  
+        }
+        base=base/n;  //base=(n-1)!
+        --k;
+        for(int i=n-1;i>0;k%=base,base/=i,i--){
+            auto pos=next(s.begin(),k/base);
+            result.push_back(*pos);
+            s.erase(pos);
+        }
+        result.push_back(s[0]);
+        return result;
+    }
+};
