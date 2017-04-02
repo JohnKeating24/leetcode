@@ -1,0 +1,2 @@
+//主要用到反向迭代器 v.rbegin(),v.end()
+//以及v.insert(s.begin(),1) 作为向前插入。 
