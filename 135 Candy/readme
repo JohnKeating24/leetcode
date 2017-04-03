@@ -3,6 +3,8 @@
 // backward scan to calculate to make sure child i has more candies than its right neighbor if it has a higher rate, 
   pick the bigger one from forward and backward scans as the final number for child i
 // 
-//
+//i must be a global value 
+//???????????????????????
+//反例：input:[0] expected:1 output:0  
 
 //写得很简洁，把三个for循环写成了两个。
