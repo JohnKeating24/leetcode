@@ -1,0 +1,8 @@
+// forward scan to calculate how many candies needed for child i to make sure it has more candies than its left neighbor 
+  if it has a higher rate, otherwise, give one candy to it
+// backward scan to calculate to make sure child i has more candies than its right neighbor if it has a higher rate, 
+  pick the bigger one from forward and backward scans as the final number for child i
+// 
+//
+
+//写得很简洁，把三个for循环写成了两个。
