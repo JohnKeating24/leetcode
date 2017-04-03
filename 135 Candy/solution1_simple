@@ -1,7 +1,7 @@
 class Solution {
 public:
     int candy(vector<int>& ratings) {
-        int len = ratings.size(), result = 0, i;
+        int len = ratings.size(), result = 0, i; //i must be a global value
         if(len>0){
             vector<int> number(len,0); // to save the number of candies for child[0:N-1]
             number[0] = 1; 
