@@ -3,8 +3,8 @@ public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         vector<vector<int>> result;
         sort(nums.begin(),nums.end());
-        for(int a=0;a<nums.size();a++){
-            for(int b=a+1;b<nums.size();b++){
+        for(int a=0;a<nums.size();a++){          //这里不能改成 a<nums.size()-3;？？？？？？？？   反例： [] 0
+            for(int b=a+1;b<nums.size();b++){    //这里不能改成 b<nums.size()-2;？？？？？？？？  若要改这两句，就要在先加上if(nums.size()<4) return result;
                 int c=b+1,d=nums.size()-1;
                 while(c<d){
                     int sum=nums[a]+nums[b]+nums[c]+nums[d];
