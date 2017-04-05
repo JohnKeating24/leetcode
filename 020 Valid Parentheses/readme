@@ -1,0 +1,22 @@
+Repetitive code but I guess this is clean, and easy to understand. 
+This solution also accepts (and ignores) any characters other than parenthesis in the string. 
+Hence, it can be used to check if the parenthesis matches in an equation for example.
+
+//还有其它方式来实现。比如用map，key和value分别存储左右括号。
+bool isValid(string s) {
+    stack<char> temp;
+    map<char, char> m = { {']','['},{')','('},{'}','{'} };
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == '[' || s[i] == '(' || s[i] == '{')
+            temp.push(s[i]);
+        else if (s[i] == ']' || s[i] == ')' || s[i] == '}')
+        {
+            if (temp.empty()||temp.top() != m[s[i]]) return false;
+            else temp.pop();
+        }
+    }
+    return temp.empty();
+}
+
+
+//比如用left/right来分别存储左、右括号来配对。
