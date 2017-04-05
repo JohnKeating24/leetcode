@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int largestRectangleArea(vector<int> &height) {
+        int result = 0;
+        //push a sentinel node（哨兵节点） back into the end of height to make the code logic more concise.
+        height.push_back(0);
+        vector<int> index;
+        for(int i = 0; i < height.size(); i++){
+            while(index.size() > 0 && height[index.back()] >= height[i]){
+                int h = height[index.back()];
+                index.pop_back();
+                int sidx = index.size() > 0 ? index.back() : -1;
+                result =max(result,h * (i-sidx-1)) ;
+            }
+            index.push_back(i);
+        }
+        return result;
+    }
+};
