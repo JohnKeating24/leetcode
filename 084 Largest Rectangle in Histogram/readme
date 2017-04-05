@@ -1,0 +1,21 @@
+ //push a sentinel node（哨兵节点） back into the end of height to make the code logic more concise.
+ 
+ for example:
+ 2 1 5 6 2 3
+ initial:height:2 1 5 6 2 3 0
+          index:0 1 2 3 4 5 6
+stk:      [>
+    bottom  top
+    
+ i=0 index[0]=0;   [0>
+ i=1 result=0,h=2,result=max(0,2*(1-(-1)-1));  [1>
+ i=2 index[1]=2  [1 2>
+ i=3 index[2]=3  [1 2 3>
+ i=4 result=max(2,6*(4-2-1))=6,index.pop()
+     result=max(6,5*(4-1-1))=10,index.pop()
+     index[1]=4  [1 4>
+ i=5 index[2]=5  [1 4 5>
+ i=6 result=max(10,3*(6-4-1))=10,index.pop()  [1 4>
+     result=max(10,2*(6-1-1))=10,index.pop()  [1>
+     result=max(10,1*(6-(-1)-1))=10  [>
+ return result=10;
