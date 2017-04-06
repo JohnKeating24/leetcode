@@ -1,18 +1,18 @@
 class Solution {
 public:
     int largestRectangleArea(vector<int> &height) {
-        int result = 0;
+        int result = 0; 
         //push a sentinel node（哨兵节点） back into the end of height to make the code logic more concise.
-        height.push_back(0);
+        height.push_back(0);      //加0 可以处理升序的情况和类似边界
         vector<int> index;
         for(int i = 0; i < height.size(); i++){
             while(index.size() > 0 && height[index.back()] >= height[i]){
                 int h = height[index.back()];
                 index.pop_back();
-                int sidx = index.size() > 0 ? index.back() : -1;
-                result =max(result,h * (i-sidx-1)) ;
+                int leftIndex = index.size() > 0 ? index.back() : -1;  // leftIndex 和 i　中间至少要间隔一个单位：i－leftIndex>=2
+                result =max(result,h * (i-leftIndex-1)) ;       // think for example:2 1 5 6 2 3 (0)
             }
-            index.push_back(i);
+            index.push_back(i);  //执行到这步时，恒有height[index.back()] < height[i]
         }
         return result;
     }
