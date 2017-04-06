@@ -3,7 +3,7 @@ public:
     int candy(vector<int>& ratings) {
         int len = ratings.size(), result = 0, i; //i must be a global value
         if(len>0){
-            vector<int> number(len,0); // to save the number of candies for child[0:N-1]
+            vector<int> number(len,0); // to save the number of candies for child[0:N-1]   一定要指定number的大小。不然会出错
             number[0] = 1; 
             for(i=1; i<len;++i) number[i] = ratings[i]>ratings[i-1]?number[i-1]+1:1;
             for(i=len-2, result = number[len-1]; i>=0;--i){
