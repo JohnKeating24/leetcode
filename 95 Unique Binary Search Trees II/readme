@@ -1,7 +1,0 @@
-//注意：
-//if(n==0) return vector<TreeNode*>(NULL);可以通过测试
-//if(n==0) return vector<TreeNode*>(0); 可以通过测试
-//if(n==0) return generate(1,0); 不能通过测试
-//input:0
-//output:[[]]
-//expected:[]
