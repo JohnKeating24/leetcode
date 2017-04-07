@@ -1,0 +1,5 @@
+Algorithm:
+
+1. pop string from the end of the vector
+2. if it's number, just return it
+3. if it's operation, call function recursively for 2nd operand and 1st
