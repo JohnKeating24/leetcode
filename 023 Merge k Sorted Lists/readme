@@ -1,0 +1,2 @@
+//注意一定要先判断lists是否为空。
+//循环调用 mergeTwoLists
