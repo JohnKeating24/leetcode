@@ -8,7 +8,7 @@ public:
     }
 private:
     int left(vector<int>& nums, int target) {
-        int n = nums.size(), l = 0, r = n; 
+        int n = nums.size(), l = 0, r = n;  // if r==n-1,it will error
         while (l < r) {
             int mid = (l + r) / 2;
             if (nums[mid] < target) l = mid + 1;
