@@ -8,7 +8,11 @@ public:
     }
 private:
     int left(vector<int>& nums, int target) {
-        int n = nums.size(), l = 0, r = n;  // if r==n-1,it will error
+        int n = nums.size(), l = 0, r = n; 
+        // if r==n-1,it will error
+        //  example: [1] 1 ==>[0,-1] wrong    [2 2] 2==>[0,0] wrong
+        //in order to let the above example to be right
+        
         while (l < r) {
             int mid = (l + r) / 2;
             if (nums[mid] < target) l = mid + 1;
