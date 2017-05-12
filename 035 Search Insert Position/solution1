@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int i=0,j=nums.size(),mid;
+        while(i<j){
+            mid=(i+j)>>1;
+            if(target<=nums[mid]) j=mid;
+            else i=mid+1;
+        }
+        return i;
+    }
+};
