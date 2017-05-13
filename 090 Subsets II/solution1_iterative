@@ -4,7 +4,7 @@ public:
         vector<vector<int> > totalset = {{}};
         sort(S.begin(),S.end());
         for(int i=0; i<S.size();){
-            int count = 0; // num of elements are the same
+            int count = 1; // num of elements are the same    // here count should equal to 1,not 0
             while(count + i<S.size() && S[count+i]==S[i])  count++;
             int previousN = totalset.size();
             for(int k=0; k<previousN; k++){
