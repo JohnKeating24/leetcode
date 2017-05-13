@@ -1,0 +1,4 @@
+first sort
+then:the repeated number (suppose there count same numbers) can be repeated 0/1/2/.../count times.
+     since there is 0 times before,so we should  repeate it 1/2/.../count times again.
+     just change 0/1 to 0/1/2/.../count.
