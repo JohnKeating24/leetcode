@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> result;
+        vector<int> path;
+        dfs(nums,path,0,result);
+        return result;
+    }
+    void dfs(vector<int> &nums,vector<int>& path,int step,vector<vector<int>>& result){
+        if(step==nums.size()){
+            result.push_back(path);
+            return;
+        }
+        for(auto i:nums){
+            auto pos=find(path.begin(),path.end(),i);
+            if(pos==path.end()){
+                path.push_back(i);
+                dfs(nums,path,step+1,result);
+                path.pop_back();
+            }
+        }
+    }
+};
