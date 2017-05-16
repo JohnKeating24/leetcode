@@ -1,0 +1,20 @@
+class Solution {
+public:
+    void recursion(vector<int> num, int i, int j, vector<vector<int> > &result) {
+        if (i == j-1) {
+            result.push_back(num);
+            return;
+        }
+        for (int k = i; k < j; k++) {
+            if (k != i && num[k] == num[i]) continue;
+            swap(num[k], num[i]);
+            recursion(num, i+1, j, result);
+        }
+    }
+    vector<vector<int> > permuteUnique(vector<int> &num) {
+        sort(num.begin(), num.end());
+        vector<vector<int>> result;
+        recursion(num, 0, num.size(), result);
+        return result;
+    }
+};
