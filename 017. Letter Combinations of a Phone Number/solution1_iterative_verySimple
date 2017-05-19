@@ -8,11 +8,10 @@ public:
         for (int i = 0; i < digits.size(); i++){
             vector<string> temp;
             string chars = keyboard[digits[i] - '0'];
-            for (int k = 0; k < chars.size();k++)
-                for (int j = 0; j < result.size();j++)
-                    temp.push_back(result[j]+chars[k]);
+            for (int j = 0; j < result.size();j++)
+                for (int k = 0; k < chars.size();k++)
+                temp.push_back(result[j]+chars[k]);
             result=temp;
-
         }
         return result;
     }
