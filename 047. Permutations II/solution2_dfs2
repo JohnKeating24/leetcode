@@ -22,3 +22,7 @@ public:
                 }
     }
 };
+
+
+// 上式dfs中，if;else等价于
+// if{...;return ;} ...
