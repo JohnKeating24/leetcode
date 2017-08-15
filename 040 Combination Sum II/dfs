@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<vector<int> > combinationSum2(vector<int> &candidates, int target) {
+        sort(candidates.begin(), candidates.end());
+        vector<vector<int> > result;
+        vector<int> path;
+        dfs(0, target, result, path, candidates);
+        return result;
+    }
+private:
+    void dfs(int begin, int target, vector<vector<int> > &result, vector<int> &path, vector<int> &candidates) {
+        if (!target) {
+            result.push_back(path);
+            return;
+        }
+        for (int i = begin; i != candidates.size() && candidates[i]<=target; ++i)
+            if (i == begin || candidates[i] != candidates[i - 1]) {
+                path.push_back(candidates[i]);
+                dfs(i + 1, target - candidates[i], result, path, candidates);
+                path.pop_back();
+            }
+    }
+};
+
+
+
+// dfs(i + 1, target - candidates[i], result, path, candidates);  dfs内变成i+1.
+// 而且要先用if判断是否重复，因为给定集合可能有重复元素
+// sort排序结果默认是 递增。
