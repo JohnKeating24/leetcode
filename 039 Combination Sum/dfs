@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<vector<int> > combinationSum(vector<int> &candidates, int target) {
+        sort(candidates.begin(), candidates.end());
+        vector<vector<int> > result;
+        vector<int> path;
+        dfs(0, target, result, path,candidates);
+        return result;
+    }
+private:
+    void dfs(int start, int target, vector<vector<int> > &result, vector<int> &path, vector<int> &candidates) {
+        if (!target) {
+            result.push_back(path);
+            return;
+        }
+        for (int i = start; i != candidates.size() && candidates[i]<=target; ++i) {
+            path.push_back(candidates[i]);
+            dfs(i, target - candidates[i], result, path, candidates);
+            path.pop_back();
+        }
+    }
+};
+
+
+
+//注意： dfs(i, target - candidates[i],...);是i,不是i+1,因为允许candidates中的元素重复。
