@@ -15,4 +15,5 @@ public:
 
 
 //增加一行一列，解决：原来位置上的(0,1),(1,0)可能为障碍物的情况。
-//if(!obstacleGrid[i-1][j-1])   注意是i-1,j-1，很巧妙。
+//if(!obstacleGrid[i-1][j-1])   注意是i-1,j-1，很巧妙。obstacleGrid[i-1][j-1]对应dp[i][j]
+//若在某个位置有障碍，即obstacleGrid[i-1][j-1]=1,对应的dp[i][j]仍然为0。
