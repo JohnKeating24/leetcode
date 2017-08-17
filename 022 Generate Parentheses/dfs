@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<string> generateParenthesis(int n) {
+        vector<string> result;
+        dfs(0,0,n,"",result);
+        return result;
+    }
+    void dfs(int l,int r,int n,string s,vector<string> &result){
+        if(l==n){
+            result.push_back(s.append(n-r,')'));
+            return;
+        }
+        dfs(l+1,r,n,s+'(',result);
+        if(l>r) dfs(l,r+1,n,s+')',result);
+    }
+};
