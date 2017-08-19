@@ -1,21 +1,22 @@
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
         vector<vector<int>> result;
         vector<int> path;
-        dfs(nums,path,0,result);
+        dfs(path,result,nums);
         return result;
     }
-    void dfs(vector<int> &nums,vector<int>& path,int step,vector<vector<int>>& result){
-        if(step==nums.size()){
+    void dfs(vector<int> &path,vector<vector<int>> &result,vector<int> &nums){
+        if(path.size()==nums.size()){
             result.push_back(path);
             return;
         }
-        for(auto i:nums){
-            auto pos=find(path.begin(),path.end(),i);
+        for(auto n:nums){
+            auto pos=find(path.begin(),path.end(),n);
             if(pos==path.end()){
-                path.push_back(i);
-                dfs(nums,path,step+1,result);
+                path.push_back(n);
+                dfs(path,result,nums);
                 path.pop_back();
             }
         }
