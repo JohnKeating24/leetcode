@@ -11,4 +11,4 @@ public:
 };
         //vector<int> f = triangle[triangle.size()-1];
         //for ( int i = triangle.size() - 2; i>= 0 ; --i )
-        //notice: j=0~j, very good idea, can't reverse the order
+        //notice: j=0~i, very good idea, can't reverse the order
