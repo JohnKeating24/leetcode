@@ -17,3 +17,6 @@ public:
         return dp[m][n];
     }
 };
+
+
+thinking in example:"ab","bc"
